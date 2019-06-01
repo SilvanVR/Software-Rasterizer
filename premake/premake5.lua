@@ -22,6 +22,7 @@ project "SoftwareRasterizer"
    files 
    { 
 		cwd .. "src/**.h", 
+		cwd .. "src/**.hpp", 
 		cwd .. "src/**.cpp" 
    }
 
