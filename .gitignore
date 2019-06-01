@@ -3,3 +3,8 @@ bin
 /*.sln
 /*.vcxproj
 /*.user
+/build/src/data/ProtosMesh_SW_male_head.cpp
+/build/*.user
+/build/*.filters
+/build/*.vcxproj
+/build/*.sln

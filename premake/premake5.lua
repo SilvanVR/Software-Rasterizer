@@ -1,18 +1,23 @@
 
-cwd = "../"
+root = "../"
+cwd = root .. "build/"
 
 workspace "SoftwareRasterizer"
    location (cwd)
    architecture "x64"
    configurations { "Debug", "Release" }
 
+libs = "/libs"
     
 project "SoftwareRasterizer"
    location (cwd)
    kind "ConsoleApp"
    language "C++"
-   targetdir (cwd .. "bin/%{cfg.buildcfg}")
-   objdir (cwd .. "bin/obj")
+   targetdir (root .. "bin/%{cfg.buildcfg}")
+   objdir (root .. "bin/obj")
+   
+   pchheader "stdafx.h"
+   pchsource (cwd .. "src/stdafx.cpp")
    
    files 
    { 
@@ -21,12 +26,16 @@ project "SoftwareRasterizer"
    }
 
    includedirs
-   {
+   {  
+      cwd .. "src"
    }
    
-   filter "configurations:Debug"
+   filter "system:windows"
       cppdialect "C++17"
 	  systemversion "latest"
+      defines { "PLATFORM_WIN32" }
+		
+   filter "configurations:Debug"	  
       defines { "DEBUG" }
       symbols "On"
 

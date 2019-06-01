@@ -1,9 +1,7 @@
-#include <cstdio>
-
+#include "stdafx.h"
 
 int main()
 {
-
     printf("Hello World");
     return 0;
 }
