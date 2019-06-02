@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <cstdint>
 #include <string>
+#include <algorithm>
 
 using f32     = float;
 using f64     = double;
