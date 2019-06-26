@@ -19,6 +19,8 @@ project "SoftwareRasterizer"
    pchheader "stdafx.h"
    pchsource (cwd .. "src/stdafx.cpp")
    
+   flags { "FatalWarnings" }
+   
    files 
    { 
 		cwd .. "src/**.h", 
